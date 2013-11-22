@@ -3,7 +3,7 @@
 This is the map I used in [IP Lookup](https://github.com/paulshi/iplookup) project. I really like it and I think it makes sense to make a separate project so the template can be reused easily.
 
 ##Demo
-[http://blog.paulshi.me/GoogleMapStyling/](http://blog.paulshi.me/GoogleMapStyling/)
+[http://paulshi.github.io/GoogleMapStyling](http://paulshi.github.io/GoogleMapStyling)
 
 ##Main File
 ```googlemapStyle.js``` defines the style of the google map
@@ -12,7 +12,7 @@ This is the map I used in [IP Lookup](https://github.com/paulshi/iplookup) proje
 
 
 ##Credit
-[Map marker](http://thenounproject.com/noun/map-marker/#icon-No16939) was designed by [Kelly Walker](http://thenounproject.com/kellylesliewalker/) from The Noun Project
+[Map marker](http://thenounproject.com/noun/map-marker/#icon-No16939) was designed by [Kelly Walker](http://thenounproject.com/kellylesliewalker/) from The Noun Project.
 
 ##License
 ```
