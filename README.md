@@ -8,8 +8,7 @@ This is the map I used in [IP Lookup](https://github.com/paulshi/iplookup) proje
 ##Main File
 ```googlemapStyle.js``` defines the style of the google map
 
-```noun_project_16939.svg``` is the marker styling
-
+```noun_project_16939.svg``` is the map marker styling using svg
 
 ##Credit
 [Map marker](http://thenounproject.com/noun/map-marker/#icon-No16939) was designed by [Kelly Walker](http://thenounproject.com/kellylesliewalker/) from The Noun Project.

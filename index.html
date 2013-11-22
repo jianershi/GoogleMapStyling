@@ -9,8 +9,9 @@ var myLatlng;
 var lat = 42.3626
 var lon = -71.0843
 
-//load map style file
+
 function initialize() {
+  //load map style file using jquery, this will load the variable 'style' from the googlemapStyle.js file
   $.getScript("googlemapStyle.js", function(){
 
   myLatlng = new google.maps.LatLng(lat,lon)
@@ -26,22 +27,25 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
+  //style the map
   var styledMapType = new google.maps.StyledMapType(styles, {name:"Custom"});
   map.mapTypes.set('Styled', styledMapType);
 
+  //style the marker
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
     icon: new google.maps.MarkerImage("noun_project_16939.svg",
-    null, null, null, new google.maps.Size(50,50)),
-    animation: google.maps.Animation.DROP,
+    null, null, null, new google.maps.Size(50,50)),//resize the marker
+    animation: google.maps.Animation.DROP,//add marker animation
   });
 
   });
 
 }
 
-//async load map
+//async load map function
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
@@ -50,26 +54,21 @@ function loadScript() {
   document.body.appendChild(script);
 }
 
-//Recenter Map
+//Recenter Map when screen size changes
 function recenterMap()
 {
   map.setOptions({
         center: myLatlng,
     });
 }
-//Resize Map to the remainder of the screen
-function resizeMap()
-{
-  correctheight = $( window ).height() - $("#container").height()
-  $("#map-canvas").css("height",correctheight+"px") 
-}
 
+//load map when screen load
 $( document ).ready(function() {
   loadScript();
 });
 
+//recenter map when window resize
 $( window ).resize(function() {
-  resizeMap()
   recenterMap();
 });
 
