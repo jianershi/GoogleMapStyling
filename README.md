@@ -2,6 +2,9 @@
 
 This is the map I used in [IP Lookup](https://github.com/paulshi/iplookup) project. I really like it and I think it makes sense to make a separate project so the template can be reused easily.
 
+##Demo
+[http://blog.paulshi.me/GoogleMapStyling/](http://blog.paulshi.me/GoogleMapStyling/)
+
 ##Main File
 ```googlemapStyle.js``` defines the style of the google map
 
