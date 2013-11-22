@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+var map;
+var myLatlng;
+var lat = 42.3626
+var lon = -71.0843
+
+//load map style file
+function initialize() {
+  $.getScript("googlemapStyle.js", function(){
+
+  myLatlng = new google.maps.LatLng(lat,lon)
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng,
+    mapTypeControlOptions: {
+      mapTypeIds: [ 'Styled']
+    },
+    mapTypeId: 'Styled',
+    streetViewControl: true
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+  var styledMapType = new google.maps.StyledMapType(styles, {name:"Custom"});
+  map.mapTypes.set('Styled', styledMapType);
+
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    icon: new google.maps.MarkerImage("noun_project_16939.svg",
+    null, null, null, new google.maps.Size(50,50)),
+    animation: google.maps.Animation.DROP,
+  });
+
+  });
+
+}
+
+//async load map
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+//Recenter Map
+function recenterMap()
+{
+  map.setOptions({
+        center: myLatlng,
+    });
+}
+//Resize Map to the remainder of the screen
+function resizeMap()
+{
+  correctheight = $( window ).height() - $("#container").height()
+  $("#map-canvas").css("height",correctheight+"px") 
+}
+
+$( document ).ready(function() {
+  loadScript();
+});
+
+$( window ).resize(function() {
+  resizeMap()
+  recenterMap();
+});
+
+</script>
+</head>
+
+<body>
+<div id='map-canvas'></div>
+</body>
